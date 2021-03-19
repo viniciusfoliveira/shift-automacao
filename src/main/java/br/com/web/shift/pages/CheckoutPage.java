@@ -80,7 +80,7 @@ public class CheckoutPage {
 		return termosServico;
 	}
 
-	public List<WebElement> getPassosOrder() {
+	public List<WebElement> getPassosFomulario() {
 
 		for (int i = 0; i < passosFormulario.size(); i++) {
 			HelperWait.waitPresenceOfElement(passosFormulario.get(i), 40);
@@ -99,32 +99,32 @@ public class CheckoutPage {
 		FileWriter arq = new FileWriter(System.getProperty("user.dir") + "/order.txt");
 		BufferedWriter bw = new BufferedWriter(arq);
 
-		for (int i = 0; i < getPassosOrder().size(); i++) {
+		for (int i = 0; i < getPassosFomulario().size(); i++) {
 
-			if (getPassosOrder().get(i).getText().equals("01. Summary")) {
+			if (getPassosFomulario().get(i).getText().equals("01. Summary")) {
 				clicarProceeedCheckoutSummary();
 			}
 
-			if (getPassosOrder().get(i).getText().equals("02. Sign in")) {
+			if (getPassosFomulario().get(i).getText().equals("02. Sign in")) {
 
 				this.email.sendKeys(email);
 				this.password.sendKeys(senha);
 				submitLogin.click();
 			}
 
-			if (getPassosOrder().get(i).getText().equals("03. Address")) {
+			if (getPassosFomulario().get(i).getText().equals("03. Address")) {
 
 				assertEquals("Travessa Arlindo josé da silva", getEndereco());
 				clicarProceedCheckoutAddress();
 			}
 
-			if (getPassosOrder().get(i).getText().equals("04. Shipping")) {
+			if (getPassosFomulario().get(i).getText().equals("04. Shipping")) {
 
 				getTermosServico().click();
 				clicarProceedCheckoutCarrier();
 			}
 
-			if (getPassosOrder().get(i).getText().equals("05. Payment")) {
+			if (getPassosFomulario().get(i).getText().equals("05. Payment")) {
 				pagamento.click();
 
 				for (int j = 0; j < order.size(); j++) {

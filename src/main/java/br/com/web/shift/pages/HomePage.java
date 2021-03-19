@@ -14,11 +14,9 @@ public class HomePage {
 	@FindBy(how = How.ID, using = "search_query_top")
 	private WebElement buscarProduto;
 
-
 	@FindBy(how = How.NAME, using = "submit_search")
-	private WebElement clicarBotaoBusca ;
-	
-	
+	private WebElement clicarBotaoBusca;
+
 	@FindBy(how = How.XPATH, using = "//div[@class='product-image-container']")
 	private List<WebElement> produtos;
 
@@ -30,16 +28,16 @@ public class HomePage {
 	}
 
 	public void buscarProduto(String produto) {
-		 buscarProduto.sendKeys(produto);
+		buscarProduto.sendKeys(produto);
 	}
-	
+
 	public void clicarBotaoBuscarProduto() {
 		clicarBotaoBusca.click();
 	}
-	
-	public void adicionarCarrinho() {		
+
+	public void adicionarCarrinho() {
 		produtos.get(0).click();
 		adicionarCarrinho.click();
 	}
-	
+
 }
