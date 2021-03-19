@@ -13,7 +13,10 @@ Pagina inicial do AliExpress, site escolhido para poder buscar os modelos de sma
 
 ### Executando os teste
 
-* Pode ser encontrado no pacote suits um arquivo chamado SuiteTest basta executa-lo como JUnit Test
+* Pode ser encontrado no pacote suits um arquivo chamado SuiteTest basta executa-lo como JUnit Test. 
+
+### Obs
+* Já exite uma planilha e um txt gravando informações dentro da raiz do projeto basta abri-lo com as ferramentas correspondentes
 
 ### Autor
 
